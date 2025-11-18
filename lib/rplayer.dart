@@ -1,7 +1,7 @@
 library rplayer;
 
 import 'dart:async';
-import 'dart:ffi';
+import 'dart:ffi' as ffi;
 
 import 'package:ffi/ffi.dart';
 import 'package:flutter/material.dart';
