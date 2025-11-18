@@ -4,7 +4,7 @@ import 'dart:async';
 import 'dart:ffi';
 
 import 'package:ffi/ffi.dart';
-import 'package:flutter/material.dart' as m;
+import 'package:flutter/material.dart';
 
 import 'package:rplayer/native_library.dart';
 
@@ -14,8 +14,8 @@ part 'rplayer_view.dart';
 
 final _lib = NativeLibrary(DynamicLibrary.open('librplayer.so'));
 
-class RPlayer with m.ChangeNotifier {
-  final m.Pointer<Void> _pNativePlayer;
+class RPlayer with ChangeNotifier {
+  final Pointer<Void> _pNativePlayer;
   late final Timer _observer;
 
   RPlayer({
@@ -38,8 +38,8 @@ class RPlayer with m.ChangeNotifier {
     return _lib.RPlayer_getState(_pNativePlayer);
   }
 
-  m.Size get size {
-    return m.Size(
+  Size get size {
+    return Size(
       _lib.RPlayer_getWidth(_pNativePlayer).toDouble(),
       _lib.RPlayer_getHeight(_pNativePlayer).toDouble(),
     );
